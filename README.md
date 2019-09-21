@@ -25,6 +25,7 @@ jobs:
         with:
             toolchain: nightly
             override: true
+            component: clippy
 
       # `cargo check` command here will use installed `nightly`
       # as it set as an "override" for current directory
@@ -44,6 +45,7 @@ See [additional recipes here](https://github.com/actions-rs/meta).
 * `target`: Additionally install specific target for this toolchain (ex. `x86_64-apple-darwin`)
 * `default`: Set installed toolchain as default (executes `rustup toolchain default {toolchain}`)
 * `override`: Set installed toolchain as an override for current directory
+* `component`: Set additional component (see the below section) to add to the toolchain
 
 ## Components
 

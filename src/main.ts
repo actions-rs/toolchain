@@ -89,6 +89,10 @@ async function run() {
     if (opts.target) {
         await exec.exec(rustup, ['target', 'add', '--toolchain', opts.name, opts.target]);
     }
+
+    if (opts.component) {
+        await exec.exec(rustup, ['component', 'add', opts.component, '--toolchain', opts.name]);
+    }
 }
 
 async function main() {
