@@ -3,7 +3,8 @@ import * as args from '../src/args'
 const testEnvVars = {
     INPUT_TOOLCHAIN: 'nightly-2019-04-20',
     INPUT_DEFAULT: 'false',
-    INPUT_OVERRIDE: 'true'
+    INPUT_OVERRIDE: 'true',
+    INPUT_COMPONENT: 'clippy'
 }
 
 describe('actions-rs/toolchain', () => {
@@ -18,5 +19,6 @@ describe('actions-rs/toolchain', () => {
         expect(result.name).toBe('nightly-2019-04-20');
         expect(result.default).toBe(false);
         expect(result.override).toBe(true);
+        expect(result.component).toBe('clippy');
     });
 });
