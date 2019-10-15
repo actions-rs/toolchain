@@ -74,6 +74,10 @@ async function run() {
     const opts = args.toolchain_args();
     const rustup = await get_rustup(opts.name);
 
+    if (opts.self_update) {
+        await exec.exec(rustup, ['self', 'update']);
+    }
+
     await exec.exec(rustup, ['toolchain', 'install', opts.name]);
 
     if (opts.default) {

@@ -30,7 +30,8 @@ export interface ToolchainOptions {
     name: string,
     target?: string,
     default: boolean,
-    override: boolean
+    override: boolean,
+    self_update: boolean,
 }
 
 export function toolchain_args(): ToolchainOptions {
@@ -38,6 +39,7 @@ export function toolchain_args(): ToolchainOptions {
         name: getInput('toolchain', {required: true}),
         target: getInput('target') || undefined,
         default: inputBoolean('default'),
-        override: inputBoolean('override')
+        override: inputBoolean('override'),
+        self_update: inputBoolean('self_update'),
     };
 }

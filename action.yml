@@ -19,6 +19,9 @@ inputs:
   override:
     description: Set installed toolchain as an override for a directory
     default: false
+  self_update:
+    description: Update rustup itself at first
+    default: false
 
 runs:
   using: 'node12'
