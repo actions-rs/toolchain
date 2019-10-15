@@ -19,6 +19,9 @@ inputs:
   override:
     description: Set installed toolchain as an override for a directory
     default: false
+  profile:
+    description: Profile to install for this toolchain
+    required: false
 
 runs:
   using: 'node12'

@@ -45,6 +45,7 @@ See [additional recipes here](https://github.com/actions-rs/meta).
 | `target`    |          | Additionally install specified target for this toolchain, ex. `x86_64-apple-darwin`                                                    | string |         |
 | `default`   |          | Set installed toolchain as a default toolchain                                                                                         | bool   | false   |
 | `override`  |          | Set installed toolchain as an override for the current directory                                                                       | bool   | false   |
+| `profile`   |          | Profile to specify components to install, ex. `minimal`, `default`, `complete`                                                         | string |         |
 
 ## Components
 
