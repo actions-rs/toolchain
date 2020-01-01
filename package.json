@@ -30,7 +30,7 @@
     },
     "dependencies": {
         "@actions/core": "^1.1.1",
-        "@actions/exec": "^1.0.0",
+        "@actions/exec": "^1.0.2",
         "@actions/io": "^1.0.0",
         "@actions-rs/core": "^0.0.8"
     },
