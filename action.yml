@@ -10,6 +10,7 @@ inputs:
       Rust toolchain name.
 
       See https://github.com/rust-lang/rustup.rs#toolchain-specification
+    required: false
   target:
     description: Target triple to install for this toolchain
     required: false
