@@ -38,7 +38,7 @@
     "devDependencies": {
         "temp-write": "^4.0.0",
         "@types/jest": "^24.0.23",
-        "@types/node": "^12.12.14",
+        "@types/node": "^13.1.6",
         "@zeit/ncc": "^0.20.5",
         "jest": "^24.9.0",
         "jest-circus": "^24.9.0",
