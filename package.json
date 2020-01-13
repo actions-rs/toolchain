@@ -39,7 +39,7 @@
         "temp-write": "^4.0.0",
         "@types/jest": "^24.0.23",
         "@types/node": "^12.12.14",
-        "@zeit/ncc": "^0.20.5",
+        "@zeit/ncc": "^0.21.0",
         "jest": "^24.9.0",
         "jest-circus": "^24.9.0",
         "mock-env": "^0.2.0",
