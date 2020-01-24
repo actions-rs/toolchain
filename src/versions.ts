@@ -21,7 +21,7 @@ async function rustc(): Promise<void> {
     const version = parse(stdout);
 
     core.setOutput('rustc', version.long);
-//     core.setOutput('rustc_short', version.short);
+    core.setOutput('rustc-hash', version.hash);
 }
 
 /**
@@ -44,20 +44,20 @@ async function rustup(): Promise<void> {
 }
 
 interface Version {
-    short: string,
     long: string,
+    hash: string,
 }
 
 function parse(stdout: string): Version {
     stdout = stdout.trim();
-    const matches = stdout.match(/\S+\s((\S+)\s\(.+\))/m);
+    const matches = stdout.match(/\S+\s((\S+)\s\((\S+)\s(\S+)\))/m);
     if (matches == null) {
         throw new Error(`Unable to parse version from the "${stdout}" string`);
     }
 
     return {
-        short: matches[2],
         long: matches[1],
+        hash: matches[3],
     }
 }
 

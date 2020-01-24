@@ -52,11 +52,15 @@ See [additional recipes here](https://github.com/actions-rs/meta).
 
 Installed `rustc`, `cargo` and `rustup` versions can be fetched from the Action outputs:
 
-| Name     | Example                         |
-| -------- | ------------------------------- |
-| `rustc`  | `1.40.0 (73528e339 2019-12-16)` |
-| `cargo`  | `1.40.0 (bc8e4c8be 2019-11-22)` |
-| `rustup` | `1.21.1 (7832b2ebe 2019-12-20)` |
+| Name         | Description           | Example                         |
+| ------------ | --------------------- | ------------------------------- |
+| `rustc`      | Rustc version         | `1.40.0 (73528e339 2019-12-16)` |
+| `rustc-hash` | Rustc version hash    | `73528e339`                     |
+| `cargo`      | Cargo version         | `1.40.0 (bc8e4c8be 2019-11-22)` |
+| `rustup`     | rustup version        | `1.21.1 (7832b2ebe 2019-12-20)` |
+
+Note: `rustc-hash` output value can be used with [actions/cache](https://github.com/actions/cache) Action
+to store cache for different Rust versions, as it is unique across different Rust versions and builds (including `nightly`).
 
 ## Profiles
 
