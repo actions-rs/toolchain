@@ -4,7 +4,7 @@ import {existsSync, readFileSync} from 'fs';
 
 export interface ToolchainOptions {
     name: string,
-    target: string | undefined,
+    targets: string[] | undefined,
     default: boolean,
     override: boolean,
     profile: string | undefined,
@@ -12,6 +12,11 @@ export interface ToolchainOptions {
 }
 
 export function toolchain_args(overrideFile: string): ToolchainOptions {
+    let targets: string[] | undefined = input.getInputList('targets');
+    if (targets && targets.length === 0) {
+        targets = undefined;
+    }
+
     let components: string[] | undefined = input.getInputList('components');
     if (components && components.length === 0) {
         components = undefined;
@@ -19,7 +24,7 @@ export function toolchain_args(overrideFile: string): ToolchainOptions {
 
     return {
         name: determineToolchain(overrideFile),
-        target: input.getInput('target') || undefined,
+        targets: targets,
         default: input.getInputBool('default'),
         override: input.getInputBool('override'),
         profile: input.getInput('profile') || undefined,
