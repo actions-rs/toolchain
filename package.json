@@ -47,7 +47,7 @@
         "eslint-config-prettier": "^6.10.1",
         "eslint-plugin-prettier": "^3.1.2",
         "jest": "^25.1.0",
-        "jest-circus": "^25.1.0",
+        "jest-circus": "^25.2.4",
         "mock-env": "^0.2.0",
         "npm-check-updates": "^4.0.5",
         "prettier": "^2.0.2",
