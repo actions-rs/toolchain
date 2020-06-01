@@ -52,7 +52,7 @@
         "npm-check-updates": "^4.0.5",
         "prettier": "^2.0.2",
         "temp-write": "^4.0.0",
-        "ts-jest": "^25.2.1",
+        "ts-jest": "^25.5.1",
         "typescript": "^3.8.3"
     }
 }
