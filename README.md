@@ -6,7 +6,7 @@
 ![Continuous integration](https://github.com/actions-rs/toolchain/workflows/Continuous%20integration/badge.svg)
 ![Dependabot enabled](https://api.dependabot.com/badges/status?host=github&repo=actions-rs/toolchain)
 
-This GitHub Action installs [Rust toolchain](https://github.com/rust-lang/rustup.rs#toolchain-specification)
+This GitHub Action installs [Rust toolchain](https://rust-lang.github.io/rustup/concepts/toolchains.html#toolchain-specification)
 with [rustup](https://github.com/rust-lang/rustup) help.
 
 It supports additional targets, components and profiles and handles all
