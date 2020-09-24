@@ -145,7 +145,7 @@ it will be automatically upgraded by this Action.
 
 ## The toolchain file
 
-This Action supports [toolchain files](https://github.com/rust-lang/rustup#the-toolchain-file),
+This Action supports [toolchain files](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file),
 so it is not necessary to use `toolchain` input anymore.
 
 Input has higher priority, so if you are want to use toolchain file,
