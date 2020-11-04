@@ -58,11 +58,11 @@ See [additional recipes here](https://github.com/actions-rs/meta).
 
 | Name         | Required | Description                                                                                                                                         | Type   | Default |
 | ------------ | :------: | ----------------------------------------------------------------------------------------------------------------------------------------------------| ------ | --------|
-| `toolchain`  |          | [Toolchain](https://github.com/rust-lang/rustup.rs#toolchain-specification) name to use, ex. `stable`, `nightly`, `nightly-2019-04-20`, or `1.32.0` | string |         |
+| `toolchain`  |          | [Toolchain](https://github.com/rust-lang/rustup.rs#toolchain-specification) name to use, ex. `stable`, `nightly`, `nightly-2019-04-20`, or `1.32.0` | string | stable  |
 | `target`     |          | Additionally install specified target for this toolchain, ex. `x86_64-apple-darwin`                                                                 | string |         |
 | `default`    |          | Set installed toolchain as a default toolchain                                                                                                      | bool   | false   |
 | `override`   |          | Set installed toolchain as an override for the current directory                                                                                    | bool   | false   |
-| `profile`    |          | Execute `rustup set profile {value}` before installing the toolchain, ex. `minimal`                                                                 | string |         |
+| `profile`    |          | Execute `rustup set profile {value}` before installing the toolchain, ex. `minimal`                                                                 | string | default |
 | `components` |          | Comma-separated list of the additional components to install, ex. `clippy, rustfmt`                                                                 | string |         |
 
 Note: since `v1.0.4` version, `toolchain` input is not marked as required
