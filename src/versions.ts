@@ -45,7 +45,7 @@ function parseShort(stdout: string): string {
 async function getStdout(
     exe: string,
     args: string[],
-    options?: {}
+    options?: Record<string, unknown>
 ): Promise<string> {
     let stdout = "";
     const resOptions = Object.assign({}, options, {

@@ -92,3 +92,5 @@ typings/
 
 # IntelliJ IDEs
 .idea
+
+.npmrc
