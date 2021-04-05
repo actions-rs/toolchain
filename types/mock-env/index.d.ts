@@ -1,7 +1,7 @@
 declare module "mock-env" {
     function morph<T>(
         callback: () => T,
-        vars: object,
+        vars: Record<string, unknown>,
         toRemove?: string[]
-    ): any;
+    ): T;
 }

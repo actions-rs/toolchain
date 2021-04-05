@@ -62,6 +62,37 @@ describe("actions-rs/toolchain", () => {
         expect(args.name).toBe("1.39.0");
     });
 
+    it("uses new style rust-toolchain file if input does not exist", function () {
+        const rustToolchainFile = tempWriteSync(
+            '[toolchain]\nchannel = "1.51.0"\ncomponents = [ "rustfmt", "clippy" ]\nprofile = "minimal"\ntargets = [ "wasm32-unknown-unknown", "thumbv2-none-eabi" ]'
+        );
+
+        const args = morph(() => {
+            return getToolchainArgs(rustToolchainFile);
+        }, {});
+
+        expect(args.name).toBe("1.51.0");
+        expect(args.components).toStrictEqual(["rustfmt", "clippy"]);
+        expect(args.profile).toBe("minimal");
+        expect(args.target).toBe("wasm32-unknown-unknown");
+    });
+
+    it("uses new style rust-toolchain file with toml ending if input and rust-toolchain file does not exist", function () {
+        const rustToolchainFile = tempWriteSync(
+            '[toolchain]\nchannel = "1.51.0"\ncomponents = [ "rustfmt", "clippy" ]\nprofile = "minimal"\ntargets = [ "wasm32-unknown-unknown", "thumbv2-none-eabi" ]',
+            "./rust-toolchain.toml"
+        );
+
+        const args = morph(() => {
+            return getToolchainArgs(rustToolchainFile.replace(/\.toml^/, ""));
+        }, {});
+
+        expect(args.name).toBe("1.51.0");
+        expect(args.components).toStrictEqual(["rustfmt", "clippy"]);
+        expect(args.profile).toBe("minimal");
+        expect(args.target).toBe("wasm32-unknown-unknown");
+    });
+
     it("trims content of the override file", function () {
         const rustToolchainFile = tempWriteSync("\n     1.39.0\n\n\n\n");
 
