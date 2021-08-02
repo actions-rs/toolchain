@@ -85,7 +85,7 @@ to store cache for different Rust versions, as it is unique across different Rus
 ## Profiles
 
 This Action supports rustup [profiles](https://blog.rust-lang.org/2019/10/15/Rustup-1.20.0.html#profiles),
-which are can be used to speed up the workflow execution by installing the
+which can be used to speed up the workflow execution by installing the
 minimally required set of components, for example:
 
 ```yaml
