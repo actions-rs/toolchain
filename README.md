@@ -58,7 +58,7 @@ See [additional recipes here](https://github.com/actions-rs/meta).
 
 | Name         | Required | Description                                                                                                                                         | Type   | Default |
 | ------------ | :------: | ----------------------------------------------------------------------------------------------------------------------------------------------------| ------ | --------|
-| `toolchain`  |          | [Toolchain](https://github.com/rust-lang/rustup.rs#toolchain-specification) name to use, ex. `stable`, `nightly`, `nightly-2019-04-20`, or `1.32.0` | string | stable  |
+| `toolchain`  |          | [Toolchain](https://github.com/rust-lang/rustup.rs#toolchain-specification) name to use, ex. `stable`, `nightly`, `nightly-2019-04-20`, or `1.32.0` | string |         |
 | `target`     |          | Additionally install specified target for this toolchain, ex. `x86_64-apple-darwin`                                                                 | string |         |
 | `default`    |          | Set installed toolchain as a default toolchain                                                                                                      | bool   | false   |
 | `override`   |          | Set installed toolchain as an override for the current directory                                                                                    | bool   | false   |
