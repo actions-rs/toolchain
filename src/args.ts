@@ -1,6 +1,7 @@
 import { input } from "@actions-rs/core";
 import { debug } from "@actions/core";
 import { existsSync, readFileSync } from "fs";
+import { parse } from "fast-toml";
 
 export interface ToolchainOptions {
     name: string;
@@ -19,10 +20,10 @@ function determineToolchain(overrideFile: string): string {
         return toolchainInput;
     }
 
-    const toolchainPath = existsSync(overrideFile) 
-        ? overrideFile 
-        : existsSync(`${overrideFile}.toml`) 
-        ? `${overrideFile}.toml` 
+    const toolchainPath = existsSync(overrideFile)
+        ? overrideFile
+        : existsSync(`${overrideFile}.toml`)
+        ? `${overrideFile}.toml`
         : undefined;
 
     if (!toolchainPath) {
@@ -35,6 +36,15 @@ function determineToolchain(overrideFile: string): string {
         encoding: "utf-8",
         flag: "r",
     }).trim();
+
+    const toolchain = rustToolchainFile.includes("[toolchain]")
+        ? parse<{ toolchain?: { channel?: string } }>(rustToolchainFile)
+              ?.toolchain?.channel
+        : rustToolchainFile;
+
+    if (!toolchain) {
+        throw new Error(`channel is not specified in ${toolchainPath}`);
+    }
 
     debug(`using toolchain from rust-toolchain file: ${rustToolchainFile}`);
 
