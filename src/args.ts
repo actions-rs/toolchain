@@ -19,13 +19,19 @@ function determineToolchain(overrideFile: string): string {
         return toolchainInput;
     }
 
-    if (!existsSync(overrideFile)) {
+    const toolchainPath = existsSync(overrideFile) 
+        ? overrideFile 
+        : existsSync(`${overrideFile}.toml`) 
+        ? `${overrideFile}.toml` 
+        : undefined;
+
+    if (!toolchainPath) {
         throw new Error(
             "toolchain input was not given and repository does not have a rust-toolchain file"
         );
     }
 
-    const rustToolchainFile = readFileSync(overrideFile, {
+    const rustToolchainFile = readFileSync(toolchainPath, {
         encoding: "utf-8",
         flag: "r",
     }).trim();
