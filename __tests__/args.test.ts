@@ -71,4 +71,17 @@ describe("actions-rs/toolchain", () => {
 
         expect(args.name).toBe("1.39.0");
     });
+
+    it("supports toml override file", function () {
+        const rustToolchainFile = tempWriteSync(`
+            [toolchain]
+            channel = "stable"
+        `);
+
+        const args = morph(() => {
+            return getToolchainArgs(rustToolchainFile);
+        }, {});
+
+        expect(args.name).toBe("stable");
+    });
 });
