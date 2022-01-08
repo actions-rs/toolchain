@@ -46,9 +46,9 @@ function determineToolchain(overrideFile: string): string {
         throw new Error(`channel is not specified in ${toolchainPath}`);
     }
 
-    debug(`using toolchain from rust-toolchain file: ${rustToolchainFile}`);
+    debug(`using toolchain from rust-toolchain file: ${toolchain}`);
 
-    return rustToolchainFile;
+    return toolchain;
 }
 
 export function getToolchainArgs(overrideFile: string): ToolchainOptions {
