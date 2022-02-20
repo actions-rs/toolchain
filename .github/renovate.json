@@ -1,0 +1,19 @@
+{
+    "extends": [
+      "config:base"
+    ],
+    "packageRules": [
+      {
+        "matchUpdateTypes": [
+          "minor",
+          "patch"
+        ],
+        "automerge": true
+      }
+    ],
+    "commitMessagePrefix": "chroe(deps): ",
+    "labels": [
+      "dependencies"
+    ],
+    "prHourlyLimit": 0
+}
