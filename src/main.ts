@@ -79,8 +79,10 @@ async function run(): Promise<void> {
 
     await rustup.installToolchain(opts.name, installOptions);
 
-    if (opts.target) {
-        await rustup.addTarget(opts.target, opts.name);
+    if (opts.targets) {
+        for (const target of opts.targets) {
+            await rustup.addTarget(target, opts.name);
+        }
     }
 
     await versions.gatherInstalledVersions();
