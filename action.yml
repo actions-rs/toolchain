@@ -16,7 +16,7 @@ inputs:
   targets:
     description: Comma-separated list of additional target triples to install for this toolchain
     required: false
-  targets:
+  target:
     description: Alias for `targets`
     required: false
   default:
