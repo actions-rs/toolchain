@@ -33,9 +33,9 @@
     },
     "dependencies": {
         "@actions-rs/core": "^0.1.6",
-        "@actions/core": "^1.2.6",
-        "@actions/exec": "^1.0.4",
-        "@actions/io": "^1.0.2"
+        "@actions/core": "^1.10.0",
+        "@actions/exec": "^1.1.1",
+        "@actions/io": "^1.1.2"
     },
     "devDependencies": {
         "@types/jest": "^26.0.15",
