@@ -35,6 +35,13 @@ function determineToolchain(overrideFile: string): string {
     return rustToolchainFile;
 }
 
+export function setWorkingDirectory() {
+    const workingDirectory = input.getInput("working-directory");
+    if (workingDirectory) {
+        process.chdir(workingDirectory);
+    }
+}
+
 export function getToolchainArgs(overrideFile: string): ToolchainOptions {
     let components: string[] | undefined = input.getInputList("components");
     if (components && components.length === 0) {
