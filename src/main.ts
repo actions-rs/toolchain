@@ -6,6 +6,7 @@ import * as versions from "./versions";
 import { RustUp, ToolchainOptions } from "@actions-rs/core";
 
 async function run(): Promise<void> {
+    args.setWorkingDirectory();
     // we use path.join to make sure this works on Windows, Linux and MacOS
     const toolchainOverridePath = path.join(process.cwd(), "rust-toolchain");
 

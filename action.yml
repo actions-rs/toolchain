@@ -28,6 +28,8 @@ inputs:
   components:
     description: Comma-separated list of components to be additionally installed for a new toolchain
     required: false
+  working-directory:
+    description: Working directory to use for finding rust-toolchain
 
 outputs:
   rustc:
