@@ -148,7 +148,7 @@ it will be automatically upgraded by this Action.
 This Action supports [toolchain files](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file),
 so it is not necessary to use `toolchain` input anymore.
 
-Input has higher priority, so if you are want to use toolchain file,
+Input has higher priority, so if you want to use a toolchain file,
 you need to remove the input from the workflow file.
 
 If neither `toolchain` input or `rust-toolchain` file are provided,
